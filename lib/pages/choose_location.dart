@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 class ChooseLocation extends StatefulWidget {
@@ -10,11 +8,22 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-  int counter = 0;
+  void getData() async {
+    String username = await Future.delayed(Duration(seconds: 3), () {
+      return 'Yoshi';
+    });
+
+    String bio = await Future.delayed(Duration(seconds: 2), () {
+      return 'Vegan, musician & egg';
+    });
+
+    print('$username - $bio');
+  }
+
   @override
   void initState() {
     super.initState();
-    print('init state function ran');
+    getData();
   }
 
   @override
@@ -27,14 +36,6 @@ class _ChooseLocationState extends State<ChooseLocation> {
         title: Text('Choose your location'),
         centerTitle: true,
         elevation: 0,
-      ),
-      body: ElevatedButton(
-        onPressed: () {
-          setState(() {
-            counter += 1;
-          });
-        },
-        child: Text('counter is $counter'),
       ),
     );
   }

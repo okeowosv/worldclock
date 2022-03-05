@@ -20,7 +20,7 @@ class WorldTime {
 
       //Get properties from data
       String datetime = data['datetime'];
-      String offset = data['utc_offset'].substring(1, 2);
+      String offset = data['utc_offset'].substring(1, 3);
       // print('date/time: $datatime utc: $offset');
 
       // create datetime object
